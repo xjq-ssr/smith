@@ -31,4 +31,4 @@ def get_eip(instance_id):
         print(type(pub_ip))
         return pub_ip
     except Exception as e:
-        return str(e)
+        print(e)
