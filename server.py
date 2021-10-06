@@ -16,6 +16,7 @@ def onepage():
 @app.route('/reset')
 def reset():
     result = str(os.popen('/usr/bin/python3 /home/centos/smith/main.py').readlines())
+    result = '<br>'.join(r)
     return result
 
 if __name__ == '__main__':
