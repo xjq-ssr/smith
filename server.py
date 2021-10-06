@@ -9,8 +9,9 @@ app = Flask(__name__)
 
 @app.route('/')
 def onepage():
-    result = str(os.popen('/usr/bin/python3 /home/centos/smith/geteip.py').readlines())
-    return result
+    result = os.popen('/usr/bin/python3 /home/centos/smith/geteip.py').readlines()
+    ip = result[0]
+    return ip
 
 @app.route('/reset')
 def reset():
