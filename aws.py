@@ -28,6 +28,7 @@ def get_eip(instance_id):
         for addr in response['Addresses']:
             if addr['InstanceId'] == instance_id:
                 pub_ip = addr['PublicIp']
+        print(type(pub_ip))
         return pub_ip
     except Exception as e:
-        return e
+        return str(e)
