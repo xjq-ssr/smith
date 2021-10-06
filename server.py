@@ -15,9 +15,8 @@ def onepage():
 
 @app.route('/reset')
 def reset():
-    result = str(os.popen('/usr/bin/python3 /home/centos/smith/main.py').readlines())
-    result = '<br>'.join(r)
-    return result
+    os.popen('/usr/bin/python3 /home/centos/smith/main.py')
+    return 'nice'
 
 if __name__ == '__main__':
     app.debug = True
