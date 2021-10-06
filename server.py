@@ -1,21 +1,9 @@
 # -*- coding: UTF-8 -*-
 #import MySQLdb
 import sys
-sys.path.append('..')
-from datetime import datetime
-from flask import Flask
-from flask import url_for
-from flask import request
-from flask import redirect
-from flask import render_template
-from flask import session
-from flask import escape
-from flask import Response
-import json
-import ssl
 import os
-import re
-#import pyutil
+from flask import Flask
+
 
 app = Flask(__name__)
 
