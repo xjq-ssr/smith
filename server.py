@@ -20,7 +20,7 @@ def reset():
     return ip
 
 @app.route('/reset1')
-def reset1()
+def reset1():
     return '192.168.0.1'
 
 if __name__ == '__main__':
