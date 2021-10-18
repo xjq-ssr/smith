@@ -3,8 +3,7 @@
         request = new XMLHttpRequest();
         request.onreadystatechange = function(){
         var new_ip = request.responseText;
-        var old_ip = document.getElementById('ip');
-        old_ip.value = new_ip;
+        document.getElementById('ip').value = new_ip;
         var aux = document.createElement("input");
         aux.setAttribute("value", new_ip);
         document.body.appendChild(aux);
