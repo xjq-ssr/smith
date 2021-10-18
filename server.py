@@ -3,6 +3,8 @@
 import sys
 import os
 from flask import Flask
+from flask import 
+from flask import render_template
 
 
 app = Flask(__name__)
@@ -11,7 +13,7 @@ app = Flask(__name__)
 def onepage():
     result = os.popen('/usr/bin/python3 /home/centos/smith/geteip.py').readlines()
     ip = result[0]
-    return ip
+    return render_template('button.html', ip=ip)
 
 @app.route('/reset')
 def reset():
