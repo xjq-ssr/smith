@@ -15,8 +15,8 @@ def onepage():
 
 @app.route('/reset')
 def reset():
-    os.popen('/usr/bin/python3 /home/centos/smith/main.py')
-    return 'nice'
+    ip = os.popen('/usr/bin/python3 /home/centos/smith/changeip.py').readlines()
+    return ip
 
 if __name__ == '__main__':
     app.debug = True
