@@ -20,6 +20,10 @@ def reset():
     ip = os.popen('/usr/bin/python3 /home/centos/smith/changeip.py').readlines()
     return ip
 
+@app.route('/reset1')
+def reset1()
+    return '192.168.0.1'
+
 if __name__ == '__main__':
     app.debug = True
     app.run(host='0.0.0.0', port=80)

@@ -3,14 +3,21 @@
         request = new XMLHttpRequest();
         request.onreadystatechange = function(){
         var new_ip = request.responseText;
+        }
+        var url='reset1'
+        request.open('GET',url,true);
+        request.send(null);
+        
         document.getElementById('button').disabled=true;
         var old_ip = document.getElementById('ip');
         old_ip.value = new_ip;
-        }
-        var url='reset'
-        request.open('GET',url,true);
-        request.send(null);
-        alert('Test')
+        var aux = document.createElement("input");
+        aux.setAttribute("value", new_ip);
+        document.body.appendChild(aux);
+        aux.select();
+        document.execCommand("copy");
+        document.body.removeChild(aux);
+        alert('新IP已复制到剪切板')
     }
 </script>
 <body>
