@@ -22,7 +22,7 @@ def reset():
 @app.route('/resetip')
 def resetip():
     ip = os.popen('/usr/bin/python3 /home/centos/smith/changeip.py').readlines()
-    return redirect('http://' + ip)
+    return redirect('http://' + str(ip[0]))
 
 @app.route('/reset1')
 def reset1():
