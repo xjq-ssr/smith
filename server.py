@@ -19,7 +19,7 @@ def reset():
     ip = os.popen('/usr/bin/python3 /home/centos/smith/changeip.py').readlines()
     return ip
 
-@app.route('resetip')
+@app.route('/resetip')
 def resetip():
     ip = os.popen('/usr/bin/python3 /home/centos/smith/changeip.py').readlines()
     return redirect('http://' + ip)
