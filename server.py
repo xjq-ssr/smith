@@ -3,7 +3,7 @@
 import sys
 import os
 from flask import Flask
-from flask import render_template
+from flask import render_template, redirect
 
 
 app = Flask(__name__)
@@ -12,12 +12,17 @@ app = Flask(__name__)
 def onepage():
     result = os.popen('/usr/bin/python3 /home/centos/smith/geteip.py').readlines()
     ip = result[0]
-    return render_template('button.html', ip=ip)
+    return render_template('main.html', ip=ip)
 
 @app.route('/reset')
 def reset():
     ip = os.popen('/usr/bin/python3 /home/centos/smith/changeip.py').readlines()
     return ip
+
+@app.route('resetip')
+def resetip():
+    ip = os.popen('/usr/bin/python3 /home/centos/smith/changeip.py').readlines()
+    return redirect('http://' + ip)
 
 @app.route('/reset1')
 def reset1():
