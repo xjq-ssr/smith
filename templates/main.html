@@ -9,11 +9,16 @@
     document.body.removeChild(aux);
     alert('IP已复制到剪切板');
 }
-    window.onload = copy_ip_to_clipboard;
 </script>
 <body>
     <p style="text-align: center;">Current:</p>
-    <p style="text-align: center;" id="ip">{{ ip }}</p>
+    <div>
+        <p style="text-align: center;" id="ip">{{ ip }}</p>
+        <p style="text-align: center;">
+            <button onclick="copy_ip_to_clipboard()">Copy</button>
+        </p>
+    </div>
+    
     <p style="text-align: center;">
         <a href='/resetip'><button id='button' type="button">RESET IP</button></a>
     </p>
