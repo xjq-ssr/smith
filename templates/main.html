@@ -1,5 +1,11 @@
-<script>
-    function copy_ip_to_clipboard(){
+<body>
+    <p style="text-align: center;">Current:</p>
+    <p style="text-align: center;" id="ip">{{ ip }}</p>
+    <p style="text-align: center;">
+        <a href='/resetip'><button id='button' type="button">RESET IP</button></a>
+    </p>
+    <script>
+        function copy_ip_to_clipboard(){
         var ip = document.getElementById('ip').value;
         var aux = document.createElement("input");
         aux.setAttribute("value", ip);
@@ -9,14 +15,6 @@
         document.body.removeChild(aux);
         alert('IP已复制到剪切板:' + ip);
     }
-</script>
-<body>
-    <p style="text-align: center;">Current:</p>
-    <p style="text-align: center;" id="ip">{{ ip }}</p>
-    <p style="text-align: center;">
-        <a href='/resetip'><button id='button' type="button">RESET IP</button></a>
-    </p>
-    <script>
         window.onlad = copy_ip_to_clipboard;
     </script>
 </body>
