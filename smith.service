@@ -1,6 +1,6 @@
 [Unit]
-Description=rbs
-Documentation=rbs
+Description=smith
+Documentation=smith
 Wants=network-online.target
 After=network-online.target
 
@@ -8,7 +8,7 @@ After=network-online.target
 WantedBy=multi-user.target
 
 [Service]
-WorkingDirectory=/home/xjq/rbs/rbs
+WorkingDirectory=/home/centos/smith
 Type=simple
 KillMode=process
 KillSignal=SIGQUIT
@@ -21,5 +21,5 @@ LimitCORE=infinity
 TasksMax=infinity
 TimeoutStartSec=0
 Restart=always
-ExecStart=/usr/sbin/uwsgi --ini /home/xjq/rbs/rbs/uwsgi.ini
+ExecStart=/usr/bin/python3 server.py
 
