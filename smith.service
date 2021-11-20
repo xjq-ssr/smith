@@ -1,0 +1,25 @@
+[Unit]
+Description=rbs
+Documentation=rbs
+Wants=network-online.target
+After=network-online.target
+
+[Install]
+WantedBy=multi-user.target
+
+[Service]
+WorkingDirectory=/home/xjq/rbs/rbs
+Type=simple
+KillMode=process
+KillSignal=SIGQUIT
+Delegate=yes
+# Having non-zero Limit*s causes performance problems due to accounting overhead
+# in the kernel. We recommend using cgroups to do container-local accounting.
+LimitNOFILE=1048576
+LimitNPROC=infinity
+LimitCORE=infinity
+TasksMax=infinity
+TimeoutStartSec=0
+Restart=always
+ExecStart=/usr/sbin/uwsgi --ini /home/xjq/rbs/rbs/uwsgi.ini
+
