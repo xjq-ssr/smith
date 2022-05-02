@@ -12,5 +12,15 @@ def commit():
 def reset():
     pass
 
-def _status_check():
+def _status():
     pass
+
+def _restart():
+    pass
+
+def _start():
+    pass
+
+def _stop():
+    pass
+
