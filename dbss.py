@@ -8,6 +8,10 @@ clear_command = "rd /s/q C:\\Users\\xjq\\AppData\\Local\\Google\\Chrome"
 print os.system(clear_command)
 print 'Create new Chrome environment ... done'
 
+#remove_command = "reg add \"HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Internet Settings\" /v ProxyEnable /t REG_DWORD /d 0 /f"
+#remove_command = "set http_proxy="
+#print os.system(remove_command)
+
 print 'Get new IP address ...'
 new_ip = aws.change_eip(instance_id,hostedzone_id)
 print 'Your current IP is ' + new_ip
