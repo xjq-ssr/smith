@@ -1,5 +1,5 @@
 # smith
-shoot myself in the head
+S.M.I.T.H for shoot myself in the head
 
 
 1. download smith
