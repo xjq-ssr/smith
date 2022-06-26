@@ -14,19 +14,10 @@ def onepage():
     ip = result[0]
     return render_template('main.html', ip=ip)
 
-@app.route('/reset')
-def reset():
-    ip = os.popen('/usr/bin/python3 /home/centos/smith/changeip.py').readlines()
-    return ip
-
 @app.route('/resetip')
 def resetip():
     ip = os.popen('/usr/bin/python3 /home/centos/smith/changeip.py').readlines()
     return redirect('http://' + str(ip[0]))
-
-@app.route('/reset1')
-def reset1():
-    return '192.168.0.1'
 
 if __name__ == '__main__':
     app.debug = True
